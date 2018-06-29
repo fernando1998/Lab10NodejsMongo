@@ -1,0 +1,51 @@
+extends layout
+
+block content
+  h1 Matriculate a un curso de programación
+  ul(class="nav nav-tabs")
+   li(class='active')
+    a(data-toggle="tab", href="#paso1") Paso 1
+   li
+    a(data-toggle="tab", href="#paso2") Paso 2
+   li
+    a(data-toggle="tab", href="#paso3") Paso 3  
+  form(method='post' action='/users/form')
+   .tab-content.container
+    .tab-pane.fade.in.active#paso1
+     br
+     br
+     p Curso
+     select(name="curso")
+      option(value="php") #{value="PHP"}
+      option(value="java") #{value="Java"}
+      option(value=".net") #{value=".Net"}
+     br
+     br
+     h3(class="label label-success") Continue con el paso 2
+    .tab-pane#paso2
+     br
+     br
+     p Niveles
+     input(name="nivel", type='checkbox',value="básico")
+     | Basico
+     br
+     input(name='nivel', type='checkbox',value="intermedio")
+     | Intermedio
+     br
+     input(name='nivel', type='checkbox',value="avanzado")
+     | Avanzado
+     br
+     br
+     h3(class="label label-success") Continue con el paso 3
+    .tab-pane#paso3
+     br
+     br
+     p Tipo de pago
+     input(name='tipo', type='radio', value="efectivo")
+     | Efectivo
+     br
+     input(name='tipo', type='radio', value="tarjeta")
+     | Tarjeta
+     br
+     br
+     input(class="btn btn-success", type='submit' value="Siguiente")
